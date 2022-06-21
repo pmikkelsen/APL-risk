@@ -1,3 +1,29 @@
  Display←{
-     ⎕←'Funny time'
+     game←⍵
+     DisplayPath←{
+         From←⍺.Locations[⍵]
+         Dests←⍸⍺.Paths[⍵;]
+         To←⍺.Locations[(Dests>⍵)⌿Dests]
+         ↑From{'"'⍺,'" -- "',⍵,'";'}¨To
+     }
+     DisplayContinent←{
+         C←⊃game.ContinentNames[⍺]
+         S←''
+         S,←'subgraph cluster',C,'{'
+         S,←' bgcolor="',(⊃game.ContinentColours[⍺]),'";'
+         S,←' label="',C,'";'
+         S,←∊⍵ {
+             Soldiers←↓(↑{'Player ',(⍕⍵),': '}¨⍳≢game.Players),'*'⍴⍨⍤0⊢game.Players[;⍺]
+             '"',⍵,'" [label="',(⊃{⍺,'\n',⍵}⌿(⊂⍵),Soldiers),'"; style="filled"; fontname="monospace";];'
+         }¨game.Locations[⍵]
+         S,←'}'
+         S
+     }
+     Dot←''
+     Dot,←'graph G {'
+     Dot,←' fontsize=35;'
+     Dot,←,DisplayContinent⌸game.Continents
+     Dot,←∊game∘DisplayPath¨⍳≢game.Locations
+     Dot,←'}'
+     Dot
  }

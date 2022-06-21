@@ -1,0 +1,4 @@
+ Dump Game
+ ⎕SH'rm -f /tmp/risk.dot'
+ (⊂Display Game)⎕NPUT'/tmp/risk.dot'
+ ⎕SH'dot -Tpdf /tmp/risk.dot > /tmp/risk.pdf'

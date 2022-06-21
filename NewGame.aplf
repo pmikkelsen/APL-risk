@@ -4,6 +4,7 @@
      game.Locations←'Alaska' 'Nordvestterritoriet' 'Grønland' 'Alberta' 'Ontario' 'Østcanada' 'Vestlige USA' 'Østlige USA' 'Mellemamerika' 'Venezuela' 'Brasilien' 'Peru' 'Argentina' 'Island' 'Storbritanien' 'Vesteuropa' 'Nordeuropa' 'Sydeuropa' 'Skandinavien' 'Rusland' 'Nordafrika' 'Egypten' 'Østafrika' 'Centralafrika' 'Sydafrika' 'Madagaskar' 'Mellemøsten' 'Afghanistan' 'Ural' 'Sibirien' 'Jakutsk' 'Kamtjatka' 'Irkutsk' 'Mongoliet' 'Japan' 'Kina' 'Indien' 'Sydøstasien' 'Indonesien' 'Ny Guinea' 'Vestaustralien' 'Østaustralien'
      game.Continents←1 1 1 1 1 1 1 1 1 2 2 2 2 3 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6
      game.ContinentNames←'Nordamerika' 'Sydamerika' 'Europa' 'Afrika' 'Asien' 'Australien'
+     game.ContinentColours←'lightyellow' 'pink' 'lightblue' 'chocolate' 'lightgreen' 'orchid'
      game.Points←5 2 5 3 7 2 ⍝ One per continent
      game.Paths←0⍴⍨2⍴≢game.Locations⍝ Adj. matrix
      game.Players←⍵(≢game.Locations)⍴0
