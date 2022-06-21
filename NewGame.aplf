@@ -1,0 +1,4 @@
+ NewGame←{
+     ⍝ ⍵ is number of players :)
+     ⍬
+ }
